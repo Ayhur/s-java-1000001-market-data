@@ -19,7 +19,7 @@ The application is organized into the following core layers:
 
 ---
 
-## � Project Structure
+## Project Structure
 ```text
 src/main/java/com/inditex/marketdata
 │   MarketDataApplication.java
