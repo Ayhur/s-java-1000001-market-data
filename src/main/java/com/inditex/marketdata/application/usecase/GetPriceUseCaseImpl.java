@@ -6,11 +6,19 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
+/**
+ * Implementation of the GetPriceUseCase interface.
+ * Coordinates the retrieval of price information from the domain port.
+ */
 @RequiredArgsConstructor
 public class GetPriceUseCaseImpl implements GetPriceUseCase {
 
+    /** The repository port for price data access */
     private final PriceRepositoryPort priceRepositoryPort;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Optional<Price> execute(GetPriceQuery query) {
         return priceRepositoryPort.getApplicablePrice(query.applicationDate(), query.productId(), query.brandId());

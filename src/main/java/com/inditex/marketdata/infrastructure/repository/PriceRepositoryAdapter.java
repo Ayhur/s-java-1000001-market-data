@@ -9,12 +9,20 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+/**
+ * Infrastructure adapter for the PriceRepositoryPort.
+ * Implements domain port using Spring Data JPA repository.
+ */
 @Component
 @RequiredArgsConstructor
 public class PriceRepositoryAdapter implements PriceRepositoryPort {
 
+    /** The JPA repository for price data access */
     private final JpaPriceRepository jpaPriceRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Optional<Price> getApplicablePrice(LocalDateTime applicationDate, Long productId, Integer brandId) {
         return jpaPriceRepository

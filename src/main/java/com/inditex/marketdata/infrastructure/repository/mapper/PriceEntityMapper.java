@@ -5,11 +5,24 @@ import com.inditex.marketdata.infrastructure.repository.PriceEntity;
 
 import java.util.Objects;
 
+/**
+ * Utility class to map PriceEntity objects to domain Price objects.
+ */
 public final class PriceEntityMapper {
 
+    /**
+     * Private constructor to prevent instantiation.
+     */
     private PriceEntityMapper() {
     }
 
+    /**
+     * Maps a PriceEntity to a domain Price object.
+     *
+     * @param entity The persistence entity to map.
+     * @return A domain Price object.
+     * @throws NullPointerException if entity is null.
+     */
     public static Price from(PriceEntity entity) {
         Objects.requireNonNull(entity, "PriceEntity must not be null");
 
