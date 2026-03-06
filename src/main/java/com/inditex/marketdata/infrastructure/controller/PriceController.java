@@ -21,8 +21,6 @@ import java.time.LocalDateTime;
 
 /**
  * REST controller for managing price inquiries.
- * provides an endpoint to query the applicable price for a product, brand, and
- * date.
  */
 @Tag(name = "Prices", description = "Operations related to product prices")
 @RestController
@@ -33,8 +31,7 @@ public class PriceController {
     private final GetPriceUseCase getPriceUseCase;
 
     /**
-     * Endpoint to retrieve the applicable price for a given product, brand, and
-     * date.
+     * Endpoint to retrieve the applicable price for a given product, brand, and date.
      *
      * @param applicationDate The date for which the price is requested.
      * @param productId       The ID of the product.
